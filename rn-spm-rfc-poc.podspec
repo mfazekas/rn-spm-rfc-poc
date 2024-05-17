@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/mfazekas/rn-spm-rfc-poc.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}"
+  s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.
@@ -37,5 +37,15 @@ Pod::Spec.new do |s|
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
    end
-  end    
+  end
+
+  if const_defined?(:ReactNativePodsUtils) && ReactNativePodsUtils.respond_to?(:spm_dependency)
+    ReactNativePodsUtils.spm_dependency(s, 
+      url: 'https://github.com/apple/swift-atomics.git',
+      requirement: {kind: 'upToNextMajorVersion', minimumVersion: '1.1.0'},
+      products: ['Atomics']
+    )
+  else
+    raise "Please upgrade React Native to >=0.75.0 to use SPM dependencies."
+  end
 end

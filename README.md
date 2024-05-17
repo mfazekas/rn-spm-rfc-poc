@@ -1,3 +1,21 @@
+# What is this?
+
+A POC of simple Swift Package Manager integration for react-native
+
+How to run:
+```
+cd exmple 
+yarn install
+cd ios
+USE_FRAMEWORKS=dynamic pod install
+
+# Make sure you close and reopen workspace
+```
+
+
+
+
+
 # rn-spm-rfc-poc
 
 POC for SPM RFC for ReactNative

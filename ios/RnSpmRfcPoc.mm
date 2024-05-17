@@ -1,4 +1,5 @@
 #import "RnSpmRfcPoc.h"
+#import "rn_spm_rfc_poc/rn_spm_rfc_poc-Swift.h"
 
 @implementation RnSpmRfcPoc
 RCT_EXPORT_MODULE()
@@ -10,7 +11,8 @@ RCT_EXPORT_METHOD(multiply:(double)a
                   resolve:(RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber *result = @(a * b);
+    MultiplyInSwift* x = [[MultiplyInSwift alloc] init];
+    NSNumber *result = @([x multiply:a b:b]);
 
     resolve(result);
 }
