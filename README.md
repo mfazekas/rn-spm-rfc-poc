@@ -27,6 +27,11 @@ See also [How it works](https://github.com/mfazekas/pods-spm-dep-poc/?tab=readme
 - XCode workspace should be closed/reopened for XCode to realize that the pacakge dependency was readded
 - When pod install invoked without `USE_FRAMEWORKS=dynamic`  xcode will fail with (duplicate link issue)[https://forums.swift.org/t/objc-flag-causes-duplicate-symbols-with-swift-packages/27926]
 
+# See also
+
+https://github.com/react-native-community/discussions-and-proposals/issues/587
+
+
 
 # rn-spm-rfc-poc
 
