@@ -25,7 +25,7 @@ See also [How it works](https://github.com/mfazekas/pods-spm-dep-poc/?tab=readme
 # Limitations/known issues:
 
 - XCode workspace should be closed/reopened for XCode to realize that the pacakge dependency was readded
-- When pod install invoked without `USE_FRAMEWORKS=dynamic`  xcode will fail with (duplicate link issue)[https://forums.swift.org/t/objc-flag-causes-duplicate-symbols-with-swift-packages/27926]
+- When pod install invoked without `USE_FRAMEWORKS=dynamic`  xcode will fail with [duplicate link issue](https://forums.swift.org/t/objc-flag-causes-duplicate-symbols-with-swift-packages/27926)
 
 # See also
 
